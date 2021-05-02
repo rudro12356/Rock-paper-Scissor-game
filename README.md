@@ -1,5 +1,5 @@
 # Rock-paper-Scissor-game
-# class project 
+# class project for
 # EECS -368 
 
 # created using 
