@@ -14,6 +14,44 @@ const yourChance = document.getElementById('yourChoice');
 const restartBtn = document.getElementById('restart');
 const posChoices = document.querySelectorAll('.choices');
 
+function audioPlay(choice){
+  switch (choice){
+    case 'rock':
+      rockPlay();
+      break;
+    
+    case 'scissors':
+      scissorPlay();
+      break;
+      
+    case 'paper':
+      paperPlay();
+      break;
+  }
+}
+
+function rockPlay(){
+  var rockAudio = document.getElementById('rock-audio');
+  rockAudio.play();
+}
+
+
+function paperPlay(){
+  var paperAudio = document.getElementById('paper-audio');
+    paperAudio.play();
+
+}
+
+
+
+function scissorPlay(){
+  var scissorAudio = document.getElementById('scissor-audio');
+   scissorAudio.play();
+
+}
+
+
+
 
 posChoices.forEach(posChoice => posChoice.addEventListener('click', e => {
     yourChoice = e.target.id;
@@ -46,16 +84,20 @@ function restartFunc() {
 //which gives us different combinations to win and lose
 
 function checkChoices() {
-
+    
+    audioPlay(yourChoice);
+    
     if (yourChoice == compsChoice) {
         finalScore = "Tie game.";
     }
 
     else if (yourChoice == 'scissors' && compsChoice == 'rock') {
+        
         finalScore = "You lost. Computer won.";
     }
 
     else if (yourChoice == 'rock' && compsChoice == 'scissors') {
+        
         finalScore = "You win. Computer lost.";
     }
 
